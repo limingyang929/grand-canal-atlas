@@ -1,0 +1,110 @@
+/* Panoramas introduce the waterway, its cities, and living heritage. */
+.home-page{--home-ink:#143a42;--home-deep:#143c45;--home-paper:#f2f3ec;--home-edge:clamp(24px,5.5vw,108px);background:var(--home-paper)}
+.home-page .site-header{padding-inline:var(--home-edge)}
+.river-cover{position:relative;isolation:isolate;min-height:660px;height:calc(100svh - 95px);max-height:980px;background:var(--home-deep);color:#fff;overflow:hidden}
+.cover-image,.cover-shade{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 56%;z-index:-2}
+.cover-shade{z-index:-1;background:linear-gradient(90deg,rgba(20,30,32,.6),rgba(20,30,32,.12) 38%,transparent 66%),linear-gradient(0deg,rgba(20,30,32,.65),transparent 24%)}
+.cover-copy{padding:clamp(45px,6vh,90px) var(--home-edge) 32px;max-width:1000px}
+.cover-copy h1{font-family:var(--song);font-size:clamp(92px,min(10.8vw,17svh),180px);font-weight:500;line-height:1.09;letter-spacing:.08em;text-shadow:0 2px 25px #102d3e24;text-wrap:initial}
+.cover-copy h1 span{display:block;margin-left:.65em}
+.cover-subject{font-family:var(--song);font-size:clamp(18px,1.65vw,27px);letter-spacing:.12em;margin-top:28px;color:#fff}
+.cover-line{font-size:16px;margin-top:12px;color:#edf5f3}
+.cover-actions{display:flex;align-items:center;gap:28px;margin-top:35px;flex-wrap:wrap}
+.image-link{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:48px;padding:11px 20px;border:1px solid #d4e4e1;color:#fff;text-decoration:none;font-size:15px;transition:background-color 150ms,color 150ms}
+.image-link span,.text-link span{font-size:20px;line-height:1}
+.image-link:hover{background:#f0f6ee;color:var(--home-ink)}
+.primary-link{background:#fafbf7;color:var(--home-ink);border-color:#fafbf7}
+.primary-link:hover{background:#d9e9e1;color:var(--home-ink)}
+.cover-scroll{font-size:14px;color:#fff;text-decoration:none;padding:9px 0}
+.cover-scroll:hover{color:#fff;text-decoration:underline}
+.cover-scroll span{display:inline-block;margin-left:12px}
+.cover-caption{position:absolute;bottom:23px;inset-inline:var(--home-edge);display:flex;justify-content:space-between;gap:16px;font-size:12px;line-height:1.8;color:#f5f7f3}
+.cover-caption a{color:inherit;text-decoration:none}
+.cover-caption a:hover{text-decoration:underline}
+.river-intro{padding:90px var(--home-edge) 95px;display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start;max-width:1760px;margin:auto}
+.river-intro h2,.engineering-heading h2,.commerce-copy h2,.life-copy h2{font-size:clamp(32px,3.1vw,52px);line-height:1.55;font-weight:500;text-wrap:initial}
+.river-intro>div{max-width:550px;padding-top:8px}
+.river-intro p{font-size:16px;line-height:2;color:#3e5c5e}
+.river-intro p+p{margin-top:14px}
+.river-city,.river-heritage{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:clamp(32px,4.5vw,86px);align-items:center}
+.river-city{padding-bottom:90px}
+.city-figure,.heritage-figure{min-width:0}
+.city-figure img,.heritage-figure img{display:block;width:100%;height:auto}
+.city-figure figcaption{padding:14px 0 0 var(--home-edge);color:#50675f}
+.city-copy{padding:30px var(--home-edge) 38px 0;max-width:600px}
+.city-copy h2,.heritage-copy h2{font:500 clamp(30px,2.8vw,46px)/1.55 var(--song);text-wrap:initial}
+.city-copy p,.heritage-copy p{font-size:16px;line-height:2;color:#3e5c5e;margin-top:24px;max-width:440px}
+.river-heritage{grid-template-columns:minmax(0,1fr) minmax(0,1.65fr);padding:90px 0 0;background:var(--home-paper)}
+.heritage-copy{padding:30px 0 38px var(--home-edge)}
+.heritage-figure figcaption{padding:14px var(--home-edge) 0 0;color:#50675f}
+.text-link{display:inline-flex;align-items:center;gap:30px;padding:11px 0 5px;margin-top:24px;color:var(--home-ink);font-size:15px;text-decoration:none;border-bottom:1px solid #607f7e}
+.text-link:hover{color:var(--accent);border-color:var(--accent)}
+.river-life{display:grid;grid-template-columns:minmax(340px,.85fr) minmax(0,1.6fr);background:var(--home-deep);color:#f8f9f2}
+.life-copy{align-self:center;padding:54px 36px 60px var(--home-edge)}
+.life-copy h2{font-size:clamp(30px,2.7vw,44px)}
+.life-copy p{max-width:380px;margin-top:28px;line-height:2;font-size:16px;color:#d7e7e4}
+.life-copy .image-link{margin-top:32px}
+.life-second-link{display:block;margin-top:22px;color:#d7e7e4;font-size:14px;text-underline-offset:6px}
+.life-second-link:hover{color:#fff}
+.night-figure{position:relative;min-width:0;display:flex;flex-direction:column}
+.night-figure img{display:block;width:100%;height:100%;min-height:610px;object-fit:cover;object-position:52% 50%;flex:1}
+.night-figure figcaption{padding:10px 18px;background:var(--home-deep);color:#e1eeeb}
+.home-page figcaption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 18px;font-size:12px;line-height:1.8}
+.home-page figcaption a{color:inherit;text-decoration:none}
+.home-page figcaption a:hover{text-decoration:underline}
+.river-engineering{padding:95px 0 0;background:#e9e7d8}
+.engineering-heading{padding:0 var(--home-edge) 50px;display:grid;grid-template-columns:1fr 1fr;gap:8vw;max-width:1760px;margin:auto}
+.engineering-heading>div{max-width:540px;padding-top:12px}
+.engineering-heading p{font-size:16px;line-height:2;color:#4b5b53}
+.huai-figure img{display:block;width:100%;height:auto;max-height:720px;object-fit:cover}
+.huai-figure figcaption{padding:16px var(--home-edge) 0;color:#4a584e}
+.painting-note{font-size:12px;color:#4a584e;padding:7px var(--home-edge) 30px}
+.river-commerce{padding:95px 0 90px;display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:5vw;align-items:center;background:var(--home-paper)}
+.suzhou-figure{min-width:0}
+.suzhou-figure img{display:block;width:100%;height:auto;min-height:420px;object-fit:cover;object-position:63% 50%}
+.suzhou-figure figcaption{padding:14px 0 0 var(--home-edge);max-width:100%;color:#50675f}
+.commerce-copy{padding-right:var(--home-edge);max-width:600px}
+.commerce-copy h2{font-size:clamp(30px,2.8vw,46px)}
+.commerce-copy>p{margin-top:23px;line-height:2;font-size:16px;color:#3e5c5e}
+.commerce-second-link{display:block;margin-top:23px;font-size:14px;color:var(--home-ink)}
+.commerce-copy .place-note{font-size:12px;color:#526b63;margin-top:30px}
+.home-footer{background:#dce6df;padding:40px var(--home-edge) 25px;color:#324f50}
+.footer-reading{display:flex;align-items:center;gap:30px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid #bacdc2}
+.footer-reading>span{font:500 clamp(22px,2vw,30px)/1.7 var(--song);margin-right:auto}
+.footer-reading .text-link{margin:0}
+.footer-reading>a:last-child{font-size:14px;color:var(--home-ink)}
+.home-image-credits{font-size:12px;margin-top:22px;max-width:940px}
+.home-image-credits summary{padding:8px 0;min-height:40px}
+.home-image-credits ul{padding-left:20px;margin:5px 0 12px;line-height:2}
+.footer-title{font-size:12px;padding-top:16px;color:#456260}
+@media(min-width:1800px){.cover-copy{padding-top:95px}.river-cover{height:900px}}
+@media(max-width:1100px){.home-page .site-nav{gap:18px}.river-cover{min-height:610px}.cover-copy h1{font-size:126px}.river-life{grid-template-columns:minmax(300px,.85fr) minmax(0,1.4fr)}.life-copy{padding-right:24px}.life-copy h2{font-size:31px}.night-figure img{min-height:560px}.river-commerce{grid-template-columns:1.35fr 1fr;gap:30px}.commerce-copy h2{font-size:31px}.suzhou-figure img{min-height:440px}}
+@media(max-width:900px){.river-intro,.engineering-heading{gap:40px}.river-commerce{grid-template-columns:1fr;padding-top:65px;gap:30px}.suzhou-figure img{min-height:0}.suzhou-figure figcaption{padding-right:var(--home-edge)}.commerce-copy{max-width:720px;padding:0 var(--home-edge);display:grid;grid-template-columns:1fr 1fr;gap:0 35px}.commerce-copy h2{grid-row:1/4}.commerce-copy>p{margin-top:8px}.commerce-copy>a,.commerce-copy .place-note{grid-column:2;justify-self:start}.commerce-copy .place-note{margin-top:22px}}
+@media(max-width:760px){.home-page{--home-edge:24px}.river-cover{height:calc(100svh - 139px);min-height:610px;max-height:840px}.cover-copy{padding-top:58px}.cover-copy h1{font-size:118px}.cover-subject{font-size:19px;letter-spacing:.05em}.cover-line{font-size:14px}.cover-image{object-position:56% 50%}.cover-shade{background:linear-gradient(90deg,rgba(6,32,37,.69),rgba(6,32,37,.16)),linear-gradient(0deg,rgba(6,32,37,.82),transparent 30%)}.cover-caption{flex-direction:column;gap:0;bottom:20px}.cover-actions{gap:22px;margin-top:28px}.river-intro{padding-block:58px;grid-template-columns:1fr;gap:25px}.river-intro h2,.engineering-heading h2{font-size:36px}.river-intro>div{padding:0}.river-life{display:flex;flex-direction:column}.life-copy{padding:45px var(--home-edge);order:1}.life-copy h2{font-size:35px}.life-copy p{max-width:540px;margin-top:20px}.night-figure{order:0}.night-figure img{height:auto;min-height:0;max-height:620px;aspect-ratio:1.18;object-fit:cover}.night-figure figcaption{padding:12px var(--home-edge)}.river-engineering{padding-top:58px}.engineering-heading{grid-template-columns:1fr;gap:22px;padding-bottom:35px}.engineering-heading>div{padding-top:0}.huai-figure img{height:330px;object-fit:cover;object-position:52% 55%}.river-commerce{padding-block:58px}.suzhou-figure img{height:330px;object-fit:cover;object-position:65% 50%}.commerce-copy{display:block}.commerce-copy h2{font-size:36px}.commerce-copy>p{margin-top:18px}.footer-reading{display:block}.footer-reading>span{display:block;margin-bottom:20px}.footer-reading .text-link{margin-right:24px}.home-footer{padding-top:30px}}
+@media(max-width:390px){.home-page{--home-edge:20px}.home-page .site-nav{gap:12px}.river-cover{min-height:610px}.cover-copy h1{font-size:108px}.cover-subject{font-size:17px}.cover-actions{gap:20px}.cover-scroll{font-size:13px}.image-link{font-size:14px;gap:20px;padding-inline:16px}.cover-copy{padding-top:46px}.huai-figure img{object-position:49% 55%}.river-intro h2,.engineering-heading h2,.commerce-copy h2{font-size:33px}}
+@media(prefers-reduced-motion:reduce){.image-link{transition:none}}
+/* Keep the golden navigation channel and its boats visible beside the title. */
+.cover-image{object-position:50% 55%}
+@media(max-width:1100px){.city-copy h2,.heritage-copy h2{font-size:31px}.city-copy p,.heritage-copy p{font-size:15px;margin-top:18px}.river-city,.river-heritage{gap:30px}.city-copy .text-link,.heritage-copy .text-link{gap:16px}}
+@media(max-width:900px){
+ .river-city,.river-heritage{display:flex;flex-direction:column;align-items:stretch;gap:0}
+ .river-city{padding-bottom:65px}
+ .river-heritage{padding-top:65px}
+ .city-copy,.heritage-copy{max-width:720px;padding:32px var(--home-edge) 0}
+ .city-copy p,.heritage-copy p{max-width:620px;font-size:16px}
+ .city-figure figcaption,.heritage-figure figcaption{padding:12px var(--home-edge) 0}
+ .heritage-figure{order:-1}
+}
+@media(max-width:760px){
+ .cover-image{object-position:52% 50%}
+ .cover-shade{background:linear-gradient(180deg,rgba(6,32,37,.67),rgba(6,32,37,.18) 31%,transparent 45%),linear-gradient(0deg,rgba(6,32,37,.83),rgba(6,32,37,.25) 27%,transparent 46%)}
+ .cover-copy{padding-top:32px}
+ .cover-copy h1{font-size:clamp(70px,20vw,98px);line-height:1.15;letter-spacing:.04em;white-space:nowrap}
+ .cover-copy h1 span{display:inline;margin-left:0}
+ .cover-subject{margin-top:13px;font-size:18px;letter-spacing:.02em}
+ .cover-line{margin-top:10px;font-size:14px}
+ .cover-copy .cover-actions{position:absolute;left:var(--home-edge);right:var(--home-edge);bottom:90px;gap:12px 20px;margin:0}
+ .river-city{padding-bottom:58px}
+ .river-heritage{padding-top:58px}
+ .city-copy h2,.heritage-copy h2{font-size:35px}
+}

@@ -1,0 +1,13 @@
+@font-face{font-family:Canal Serif;src:url('./assets/fonts/canal-serif.ttf') format('truetype');font-style:normal;font-weight:400 700;font-display:swap}
+:root{
+ color-scheme:light;
+ --ground:#edf1ee;--sheet:#fafbf7;--ink:#193743;--muted:#526975;
+ --river:#277c8e;--accent:#a64235;--gold:#c5a257;--rule:#ced8d5;
+ --wash:#e1e9e5;--water:#b5d6de;
+ --song:'Canal Serif','Noto Serif SC','Source Han Serif SC','Songti SC',SimSun,serif;
+ --sans:'Microsoft YaHei','PingFang SC','Noto Sans SC',sans-serif;
+ --edge:clamp(16px,2.2vw,34px);--gap:20px;
+ --ease:cubic-bezier(.23,1,.32,1);--fast:140ms;--medium:220ms;
+ --paper:var(--ground);--seal:var(--accent);--bronze:#775e2a;
+ font-family:var(--sans);font-size:16px;background:var(--ground);color:var(--ink);
+}

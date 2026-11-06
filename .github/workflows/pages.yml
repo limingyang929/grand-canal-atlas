@@ -1,0 +1,36 @@
+name: Publish Grand Canal Atlas
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout release source
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Reassemble and verify course website
+        run: python scripts/prepare_github_pages.py
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload static website
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

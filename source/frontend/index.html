@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>一河千年 · 清口遗产地图</title>
+  <link rel="stylesheet" href="./design-tokens.css?v=3"><link rel="stylesheet" href="./components.css?v=3"><link rel="stylesheet" href="./vendor/ol.css"><link rel="stylesheet" href="./styles.css?v=3">
+<link rel="stylesheet" href="./atlas.css?v=3"></head>
+<body class="qingkou-page">
+  <header class="site-header"><a class="brand" href="./home.html"><span class="brand-title">一河千年</span><small>大运河 · 时空文化图志</small></a><nav class="site-nav" aria-label="主导航"><a href="./home.html">首页</a><a href="./narrative.html">循诗入城</a><a href="./corridor.html">沿河寻城</a><a href="./evolution.html">时空演进</a><a href="./story.html">运河图志</a><a href="./" aria-current="page">清口地图</a><a href="./evidence.html" id="open-evidence">资料依据</a><button id="open-inventory">遗产目录 <span>85</span></button></nav></header>
+  <main class="workspace">
+    <aside class="reading">
+      
+      <h1>清口枢纽</h1>
+      <p class="intro">把闸、堤、河道放回同一片地理环境，理解运河的运行，也理解遗产为何留在这里。</p>
+      <h2 class="directory-title">沿着河道看遗存</h2>
+      <div id="case-list" class="case-list" aria-label="清口遗产解读"></div>
+      
+      <div class="scope">85 项要素目录 · 12 则首批解读<br>当前地图展示清口资料图范围</div>
+    </aside>
+    <section class="map-section" aria-label="清口文化遗产地图">
+      <div class="map-toolbar">
+        <div class="view-switch" aria-label="地图显示"><button class="active" id="context-mode">完整资料图</button><button id="line-mode">线位核查</button></div>
+        <div class="region-tools"><button id="core-view">清口核心</button><button id="levee-view">洪泽湖堤</button><button id="full-view">图幅全景</button></div>
+      </div>
+      <div class="map-wrap">
+        <div id="map"></div>
+        <div class="map-title"><span id="map-place">淮安 · 清口枢纽</span><small id="map-caption">2016 年附件资料图</small></div>
+        <div class="map-status" id="map-status" role="status">正在加载完整资料底图…</div>
+        <div class="map-legend"><strong>地图图例</strong><span><i class="line red"></i>原图遗产区</span><span><i class="line green"></i>原图缓冲区</span><span><i class="water"></i>运河与水面</span><span id="reference-legend" hidden><i class="reference-gradient"></i>核查叠加线</span><span id="reference-point-legend" hidden><i class="reference-ring"></i>当前参考点</span><small>01–05 为导航参考标记<br>边界按该版资料阅读</small></div>
+
+      </div>
+        <article class="detail-card" id="detail-card" aria-live="polite">
+          <span class="theme" id="detail-theme"></span><h2 id="detail-title"></h2>
+          <h3 id="detail-question"></h3><p id="detail-text"></p>
+          <section id="point-materials" class="point-materials" aria-label="本点位相关资料" hidden>
+            <div class="materials-label"><strong>相关资料</strong><span id="point-material-count"></span></div>
+            <div id="point-material-links" class="point-material-links"></div>
+            <button id="open-point-materials" class="materials-open">图文档案与阅读线索 <span aria-hidden="true">↗</span></button>
+          </section>
+          <button id="open-point-appearance" class="appearance-open">查看外观照片与介绍 ↗</button><p id="detail-coordinate"></p><div id="detail-sources" class="source-links"></div>
+          <p class="detail-note" id="detail-note"></p>
+        </article>
+      <footer class="map-footer"><span>来源：大运河边界修改附件 S010，第 4 页 · 原底图标注 2005 / 2007 / 2008 年</span><button id="open-notes">资料说明</button></footer>
+    </section>
+  </main>
+  <dialog id="inventory-dialog">
+    <div class="dialog-head"><div><h2>85 项遗产要素目录</h2></div><button id="close-inventory" aria-label="关闭遗产目录">×</button></div>
+    <p class="dialog-intro">包含河道和遗产点，按运河系统浏览和检索。31个组成部分与85个要素分别组织。</p>
+    <div class="search-row"><input id="inventory-search" aria-label="搜索遗产名称" placeholder="搜索桥、闸、仓、街区或遗产名称…"><select id="system-filter" aria-label="按运河系统筛选"><option value="">全部运河系统</option></select></div>
+    <div id="inventory-count" class="inventory-count"></div><div id="inventory-list" class="inventory-list"></div>
+    <a href="./evidence.html?source=S014" class="directory-source">在资料依据页查看要素名录 →</a>
+  </dialog>
+  <dialog id="point-material-dialog" aria-labelledby="point-material-title">
+    <div class="dialog-head"><div><span id="point-material-kicker" hidden></span><h2 id="point-material-title"></h2><p class="material-subtitle" id="point-material-subtitle"></p></div><button id="close-point-materials" aria-label="关闭点位资料">×</button></div>
+    <figure class="point-appearance"><img id="point-appearance-image" alt="" decoding="async"><figcaption id="point-appearance-caption"></figcaption><a id="point-appearance-source" target="_blank" rel="noopener">照片原始页面 ↗</a></figure><p id="point-appearance-coordinate" class="coordinate-note"></p><p class="material-summary" id="point-material-summary"></p>
+    <div class="material-grid">
+      <section class="material-map"><figure><img id="point-material-image" alt="" decoding="async"><figcaption id="point-material-caption"></figcaption></figure><h3>对照地图看什么</h3><p id="point-map-reading"></p><a id="point-map-source">打开对应原图页 →</a></section>
+      <section class="material-history" aria-label="历史与文化阅读"><h3>时间与文化线索</h3><div id="point-material-facts" class="material-facts"></div><h3>本点位资料目录</h3><div id="point-material-documents" class="material-documents"></div></section>
+    </div>
+  </dialog>
+  <dialog id="notes-dialog"><div class="dialog-head"><h2>如何阅读这张地图</h2><button id="close-notes" aria-label="关闭说明">×</button></div><p>底图来自2016年附件，含道路、建筑、水系、地名和该版图示边界。</p><p>红线为原图遗产区边界，绿线为原图缓冲区边界。</p><p>01–04标记对应图面区域或闸名，05连接S007组成部分。切换“线位核查”可在底图上阅读参考线及大堤图面节选。</p><p>04默认展示大堤局部；“洪泽湖堤”按钮查看全段所在图幅。原件与逐页预览集中在<a href="./evidence.html">资料依据页</a>。</p><p>通过时空演进入口，继续阅读淮安沿河城市的发展故事。</p></dialog>
+  <script src="./vendor/ol.js"></script><script src="./reference-effects.js?v=3"></script><script src="./app.js?v=3"></script>
+<script src="./reading-ui.js?v=3"></script>
+</body>
+</html>

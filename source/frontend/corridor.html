@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="沿大运河从北向南，对读水运节点、商贸街区、园林、寺庙与文化展示。">
+  <title>沿河寻城 · 一河千年</title>
+  <link rel="stylesheet" href="./design-tokens.css?v=3"><link rel="stylesheet" href="./components.css?v=4"><link rel="stylesheet" href="./vendor/ol.css"><link rel="stylesheet" href="./corridor.css?v=1">
+</head>
+<body class="corridor-page">
+  <a class="skip" href="#corridor-map">跳到沿线地图</a>
+  <header class="site-header"><a class="brand" href="./home.html"><span class="brand-title">一河千年</span><small>大运河 · 时空文化图志</small></a><nav class="site-nav" aria-label="主导航"><a href="./home.html">首页</a><a href="./narrative.html">循诗入城</a><a href="./corridor.html" aria-current="page">沿河寻城</a><a href="./evolution.html">时空演进</a><a href="./story.html">运河图志</a><a href="./">清口地图</a><a href="./evidence.html">资料依据</a></nav></header>
+  <main>
+    <section class="corridor-intro"><div><p>从一城，读向千里河岸。</p><h1>沿河寻城</h1></div><div><p>桥闸让船通过，会馆联系商人，街巷容纳百业，园林与展馆保存城市的文化。把不同城市放在一起，继续追问水路怎样进入生活。</p><span id="corridor-total" role="status">正在读取沿线地点……</span></div></section>
+    <div id="corridor-experience" hidden>
+      <form class="corridor-filters" id="corridor-filters" role="search"><label>寻找地点<input id="corridor-search" type="search" placeholder="桥、会馆、园林或地点名" autocomplete="off"></label><label>城市<select id="corridor-city"><option value="">全部城市</option></select></label><label>主题<select id="corridor-category"><option value="">全部主题</option></select></label><button id="corridor-reset" type="button">查看全部</button><div class="corridor-downloads"><a id="corridor-download" href="./assets/data/canal-corridor.geojson" download>地点 GeoJSON</a><a href="./assets/data/canal-corridor-new150.csv" download>新增150处 CSV ↓</a></div></form>
+      <div class="corridor-stage">
+        <aside class="city-rail" aria-label="沿线城市目录"><h2>循城而读</h2><div id="corridor-cities"></div></aside>
+        <section class="corridor-map-panel" aria-label="跨城地点地图"><div id="corridor-map" tabindex="0" role="region" aria-label="运河沿线文化地点地图"></div><div class="corridor-map-tools"><span id="corridor-results" role="status"></span><button id="corridor-fit" type="button">当前结果范围</button></div><div id="corridor-legend" class="corridor-legend"></div><p id="corridor-background-status" class="corridor-map-note">选择城市或放大聚合圆，展开具体地点与河岸地图。</p></section>
+        <article class="corridor-detail" id="corridor-detail" aria-labelledby="corridor-place-title"><p id="corridor-place-city" class="place-city"></p><h2 id="corridor-place-title">选择一个沿河地点</h2><p id="corridor-place-theme" class="place-theme"></p><figure id="corridor-place-figure" hidden><button id="corridor-photo-open" aria-label="放大地点图片"><img id="corridor-place-photo" alt="" decoding="async"></button><figcaption id="corridor-photo-caption"></figcaption></figure><p id="corridor-place-description"></p><blockquote id="corridor-excerpt" hidden></blockquote><p id="corridor-place-reading" class="place-reading"></p><dl id="corridor-place-facts"></dl><p id="corridor-place-coordinate" class="place-coordinate"></p><div id="corridor-place-sources" class="place-sources"></div></article>
+      </div>
+      <section class="corridor-directory" aria-labelledby="corridor-directory-title"><div class="directory-heading"><h2 id="corridor-directory-title">逐处读河岸</h2><p id="corridor-directory-count"></p></div><div id="corridor-place-list"></div><div class="corridor-pagination"><button id="corridor-page-prev" type="button">上一页</button><span id="corridor-page-label"></span><button id="corridor-page-next" type="button">下一页</button></div></section>
+      <details class="corridor-method"><summary>地点来源与阅读说明</summary><p>新增地点来自各城市限定区域的OpenStreetMap公开快照，合并同名场所和重复几何后选取。点坐标为WGS84节点、场所面内代表点或线段中点，完整对象可通过原始地图链接查阅。现势地点及其保护身份、创建年代分别理解；同处运河城市不自动证明该地点由运河直接孕育。</p><p>城市间按阅读顺序串联的虚线是城市导览示意，不是测绘运河线位。局部水面、街道和园林取自同批地图快照。百科资料与图片按各自来源和授权显示；没有照片的地点保留文字和原始资料入口。</p><a href="./narrative.html">回到淮安八幕故事</a><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap · ODbL</a></details>
+    </div>
+  </main>
+  <dialog id="corridor-photo-dialog" aria-labelledby="corridor-photo-title"><div><h2 id="corridor-photo-title">地点图片</h2><button id="corridor-photo-close" aria-label="关闭大图">×</button></div><img id="corridor-large-photo" alt=""><p id="corridor-large-caption"></p></dialog>
+  <script src="./vendor/ol.js"></script><script src="./corridor.js?v=1"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>因河而生 · 时空演进 · 一河千年</title>
+  <link rel="stylesheet" href="./design-tokens.css?v=3"><link rel="stylesheet" href="./components.css?v=3"><link rel="stylesheet" href="./vendor/ol.css"><link rel="stylesheet" href="./evolution.css?v=3"><link rel="stylesheet" href="./evolution-spread.css?v=1">
+</head>
+<body class="evolution-page">
+  <a class="skip" href="#evolution-map">跳到时空地图</a>
+  <header class="site-header"><a class="brand" href="./home.html"><span class="brand-title">一河千年</span><small>大运河 · 时空文化图志</small></a><nav class="site-nav" aria-label="主导航"><a href="./home.html">首页</a><a href="./narrative.html">循诗入城</a><a href="./corridor.html">沿河寻城</a><a href="./evolution.html" aria-current="page">时空演进</a><a href="./story.html">运河图志</a><a href="./">清口地图</a><a href="./evidence.html" id="nav-evidence">资料依据</a></nav></header>
+  <main>
+    <section class="hero"><h1>沿河读城</h1><p>从一座闸，到岸上的经营与生活。<br>沿着时间，看河岸的故事逐处展开。</p><a class="hero-index" href="./narrative.html">循诗入城，读河岸怎样变化</a></section>
+    <div class="evolution-mode-switch" role="tablist" aria-label="阅读方式"><button id="mode-spread" role="tab" aria-selected="true">发展回放</button><button id="mode-eras" role="tab" aria-selected="false" tabindex="-1">按时代查阅</button></div>
+    <p id="load-status" class="load-status" role="status">正在读取时代、场景与河岸地图…</p>
+    <div id="experience" hidden>
+      <section id="spread-heading" class="spread-heading" hidden><div><span class="scene-location">沿水路 · 入街巷 · 见生活</span><h2 id="spread-title"></h2><p id="spread-description"></p></div><label>选择一条发展脉络<select id="spread-focus" aria-label="选择发展地点或片区"></select></label></section>
+      <section class="era-section" aria-label="选择历史时期"><div class="era-sticky"><h2 class="era-title">时间书签</h2><div id="era-tabs" class="era-tabs"></div><div class="play-tools"><button id="era-prev" aria-label="上一个时代">←</button><button id="play" aria-pressed="false">播放时代</button><button id="era-next" aria-label="下一个时代">→</button><label><input id="motion" type="checkbox">流光动效</label><span id="play-status" role="status">点击立即切换，随后每4秒推进</span></div><div id="play-progress" class="play-progress" role="progressbar" aria-label="时代推进进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="play-progress-fill"></span></div></div></section>
+      <div class="filters"><label>片区<select id="area"><option>清江浦</option><option>河下</option><option>淮安古城</option></select></label><label>活动<select id="function"><option value="">全部活动</option></select></label><label>阅读方式<select id="case"><option value="">沿时代读城</option></select></label><label class="view-lock"><input id="locked" type="checkbox">固定地图视角</label><button id="reset-view">本期范围</button><button id="share-state">复制当前链接</button></div>
+      <section class="stage-heading"><div><span id="scene-kicker" class="scene-location"></span><h2 id="scene-title"></h2><p id="scene-question"></p></div><p id="coverage-status" class="coverage-status" role="status"></p></section>
+      <div class="stage-grid">
+        
+        <section class="map-panel" aria-label="时代联动地图"><div class="map-caption"><span>当代地理背景</span><strong id="map-period"></strong><span>沿河寻迹</span></div><div id="evolution-map" role="region" tabindex="0" aria-label="沿河历史活动参考地图"></div>
+          <div id="spread-timeline" class="spread-timeline" hidden>
+            <div class="spread-time-top"><div><strong id="spread-time"></strong><small id="spread-time-kind"></small></div><div class="spread-play-tools"><button id="spread-prev" aria-label="上一个发展节点">←</button><button id="spread-play" aria-pressed="false">播放发展</button><button id="spread-next" aria-label="下一个发展节点">→</button><label>速度<select id="spread-speed"><option value="6000">慢读 · 6秒</option><option value="3600" selected>适中 · 3.6秒</option><option value="2000">快览 · 2秒</option></select></label><button id="spread-fit">总览范围</button><button id="spread-share">复制节点链接</button></div></div>
+            <input id="spread-range" class="spread-range" type="range" min="0" max="1" step="1" value="0" aria-label="拖动查看发展时间节点">
+            <div class="spread-range-labels"><span id="spread-start"></span><span id="spread-position"></span><span id="spread-end"></span></div>
+            <div id="spread-frame-rail" class="spread-frame-rail" aria-label="发展节点"></div><div class="spread-progress" aria-hidden="true"><span id="spread-progress"></span></div>
+            <div class="spread-status"><span id="spread-play-status" role="status"></span><span id="spread-stat"></span></div>
+          </div>
+          <div class="map-legend" id="map-legend"></div><div id="spread-map-key" class="spread-map-key" hidden><span><i class="key-dot active"></i>已展开地点</span><span><i class="key-dot future"></i>后续地点</span><span><i class="key-line documented"></i>资料记述的联系</span><span><i class="key-line reading"></i>地点出现的阅读顺序</span><span><i class="key-ring"></i>同址多种用途</span></div><p class="map-note">点击彩色地点阅读图文。底图展示当代水系与街区，历史活动以地点参考位置呈现。</p><p id="feature-info" class="feature-info" role="status">点击水面、街道或用地面，阅读地理要素。</p></section>
+        <article id="event-detail" class="event-detail" aria-labelledby="event-title"><div class="detail-top"><span id="event-state" class="tag"></span><span id="event-time"></span></div><h3 id="event-title"></h3><figure id="event-figure"><button id="open-photo" aria-label="放大当前资料图片"><img id="event-photo" alt="" decoding="async"></button><figcaption id="event-photo-caption"></figcaption><div class="photo-tools"><button id="photo-prev" aria-label="上一张图片">←</button><span id="photo-count"></span><button id="photo-next" aria-label="下一张图片">→</button></div></figure><p id="event-claim" class="event-claim"></p><p id="event-coordinate" class="coordinate"></p><div id="event-extra"></div><div id="event-sources" class="source-links"></div><a id="open-dossier" class="dossier-link">继续阅读地点图文 →</a><button id="spread-place-play" hidden>单独回放这个地点</button></article>
+      </div>
+      <section id="spread-current-records" class="spread-current-records" hidden><div class="section-head"><h2>这一节点，河岸留下了什么？</h2><span>点击片段，联动地点与图文</span></div><div id="spread-thread" class="spread-thread" aria-label="已展开的生活内容"></div><div id="spread-current-list" class="spread-current-list"></div><p class="spread-note">实线展示资料明确记述的地点联系，灰色虚线串起地点出现的阅读顺序。它们不表示历史传播路线或扩散边界。时间轴按资料节点排列；“明清”“20世纪80年代”等时期记述保留原有精度。</p><div class="spread-outlets"><a href="./narrative.html">循诗入城，接着读河岸故事 →</a><a href="./corridor.html">沿河寻城，走向大运河沿线184处地点 →</a></div></section>
+<aside class="development"><h3>这一时期，河岸怎样改变？</h3><p id="scene-reading"></p><div id="relation-list" class="relations"></div></aside>
+      <section class="events-section" aria-labelledby="events-title"><div class="section-head"><div><h2 id="events-title">沿时间拾取片段</h2></div><span id="event-count"></span></div><div id="event-list" class="event-list"></div><p id="empty-state" class="empty-state" hidden></p></section>
+      <section class="analysis-section"><div class="section-head"><div><h2>沿岸生活，怎样随时代变化？</h2></div></div><p>从运输、经营到公共生活与文化展示。点击具体内容，查看对应时代的地图、照片和介绍。</p><div class="matrix-scroll"><table id="function-matrix"><caption class="sr-only">所选片区的时代与沿岸活动</caption><thead></thead><tbody></tbody></table></div><div id="same-site-timeline" class="same-site-timeline"></div></section>
+      <footer class="page-footer"><span>河下 · 淮安古城 · 清江浦</span><p>循水路读城市，沿时间看生活。每一段故事都连接相关地点与资料。</p><a href="./story.html?scope=all">打开34处地点的图文地图 →</a></footer>
+    </div>
+  </main>
+  <dialog id="photo-dialog" aria-labelledby="photo-dialog-title"><div><h2 id="photo-dialog-title">资料图片</h2><button id="close-photo" aria-label="关闭图片">×</button></div><img id="large-photo" alt=""><p id="large-photo-caption"></p></dialog>
+  <script src="./vendor/ol.js"></script><script src="./evolution-core.js?v=2"></script><script src="./evolution-player.js?v=2"></script><script src="./evolution-map.js?v=3"></script><script src="./evolution-spread.js?v=1"></script><script src="./evolution.js?v=4"></script>
+<script src="./reading-ui.js?v=3"></script>
+</body>
+</html>

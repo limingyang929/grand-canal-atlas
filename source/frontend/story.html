@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>因河成市 · 运河图志 · 一河千年</title>
+  <link rel="stylesheet" href="./design-tokens.css?v=3"><link rel="stylesheet" href="./components.css?v=3"><link rel="stylesheet" href="./vendor/ol.css"><link rel="stylesheet" href="./styles.css?v=3"><link rel="stylesheet" href="./atlas.css?v=3"><link rel="stylesheet" href="./story.css?v=3">
+</head>
+<body class="story-page">
+  <a class="story-skip" href="#story-map">跳到文化地图</a>
+  <header class="site-header"><a class="brand" href="./home.html"><span class="brand-title">一河千年</span><small>大运河 · 时空文化图志</small></a><nav class="site-nav" aria-label="主导航"><a href="./home.html">首页</a><a href="./narrative.html">循诗入城</a><a href="./corridor.html">沿河寻城</a><a href="./evolution.html">时空演进</a><a href="./story.html" aria-current="page">运河图志</a><a href="./">清口地图</a><a href="./evidence.html" id="story-evidence">资料依据</a></nav></header>
+  <main class="story-shell">
+    <section class="story-intro"><div><h1>河岸上的生活</h1><p id="story-intro">正在整理淮安的水路、街巷与文化线索…</p></div></section>
+    <nav id="story-steps" class="story-steps" aria-label="选择故事步骤"></nav>
+    <p id="story-status" class="story-status" role="status">正在读取故事与地图资料…</p>
+    <div id="story-content" hidden>
+      <section class="story-stage" aria-labelledby="step-title">
+        <div class="stage-heading"><span id="step-number" class="step-number"></span><div><span id="step-period" class="step-period"></span><h2 id="step-title"></h2><p id="step-lead" class="step-lead"></p></div></div>
+        <div class="story-pager"><button id="story-prev" class="outline" aria-label="上一个故事步骤">← 上一步</button><span id="story-progress" role="status"></span><button id="story-next" class="outline" aria-label="下一个故事步骤">下一步 →</button></div>
+      </section>
+      <section class="story-geography" aria-label="故事地点与地理要素地图">
+        <div class="story-map-heading"><div class="map-heading-title"><h3 id="story-map-place"></h3></div><div id="story-place-choices" class="story-place-choices" hidden aria-label="本章地图地点"></div><div class="atlas-mode-controls"><button id="atlas-modern-mode" aria-pressed="true">现势矢量</button><button id="atlas-archive-mode" aria-pressed="false">2016 资料图</button><button id="story-map-reset">回到本步地点</button></div></div>
+        <div class="atlas-tools"><div id="atlas-layer-controls" class="atlas-layer-controls" aria-label="地理要素图层开关"></div><div class="atlas-scope-controls" aria-label="地图地点范围"><button id="atlas-scope-chapter" aria-pressed="true">本章地点</button><button id="atlas-scope-all" aria-pressed="false">全部地点</button></div><details id="atlas-directory" class="atlas-place-directory"><summary id="atlas-directory-title">全部地图地点</summary><div class="atlas-directory-panel"><label for="atlas-place-search">查找沿河地点</label><input id="atlas-place-search" type="search" placeholder="花街、漕运、寺塔…"><div class="atlas-directory-selects"><label>片区<select id="atlas-place-area" aria-label="地点片区"></select></label><label>类型<select id="atlas-place-category" aria-label="地点类型"></select></label></div><p id="atlas-place-results" role="status"></p><div id="atlas-place-list"></div><button id="atlas-place-clear" class="outline">清空筛选</button></div></details><a class="atlas-export" href="/api/cultural-atlas">下载地理要素 ↓</a></div>
+        <div class="story-map-wrap"><div id="story-map" role="region" tabindex="0" aria-label="淮安文化地点与河岸地理要素"></div><div class="story-map-tag" id="story-map-tag"></div></div>
+        <div class="map-reading-bar"><span id="story-coordinate-kind" class="coordinate-kind"></span><span id="atlas-visible-count" class="atlas-visible-count" role="status"></span><details class="map-coordinate-details"><summary>坐标与资料说明</summary><div><p id="story-place-coordinate" class="coordinate-note"></p><p id="story-map-note"></p><p id="story-basemap-note"></p><a href="./evidence.html?source=S010&page=4" id="story-basemap-source">核对 2016 资料图 S010 →</a></div></details><p id="atlas-mode-note" class="atlas-mode-note"></p></div>
+      </section>
+      <article class="story-place-card" id="story-place-card" aria-labelledby="story-place-title">
+        <figure><span id="story-photo-kind" class="photo-kind"></span><img id="story-place-photo" alt="" decoding="async"><figcaption id="story-place-caption"></figcaption></figure>
+        <div class="place-reading"><div class="section-heading"><div><h2 id="story-place-title"></h2></div></div><p id="story-place-intro"></p><p id="step-body" class="step-body"></p><div id="merchant-links" class="merchant-links" hidden aria-label="文献记载的会馆与行业联系"></div><p id="step-takeaway" class="step-takeaway" hidden></p><button id="story-place-open" class="outline">打开本地点图文档案 ↗</button></div>
+      </article>
+      <section id="story-literature" class="story-literature" hidden aria-labelledby="literature-title"><div class="section-heading"><div><h2 id="literature-title">旧时笔下</h2></div></div><div id="literary-cards" class="literary-cards"></div></section>
+      <section id="story-gallery" class="story-gallery" hidden aria-labelledby="gallery-title"><div class="section-heading"><div><h2 id="gallery-title"></h2><p id="gallery-intro"></p></div></div><div id="gallery-groups" class="gallery-groups" aria-label="选择图志专题"></div><p id="gallery-count" class="gallery-count" role="status"></p><div id="gallery-cards" class="gallery-cards"></div></section>
+      <section class="chapter-places" aria-labelledby="chapter-places-title"><div class="section-heading"><div><h2 id="chapter-places-title">更多地图地点</h2><p id="chapter-places-intro"></p></div></div><div id="chapter-place-cards" class="chapter-place-cards"></div></section>
+      <details id="story-evidence-details" class="story-evidence-section"><summary id="story-claims-title">展开出处与本章解读</summary><p class="evidence-reading-note">原文摘引与项目解读分别标注。以下保留相关资料及其适用范围。</p><div id="step-claims" class="step-claims"></div></details>
+      <section id="story-samples" class="story-samples" hidden aria-labelledby="sample-title">
+        <div class="sample-heading"><div class="section-heading"><div><h2 id="sample-title">街巷遗存图志</h2><p>河下 13 条建筑记录 · 点击照片卡片，阅读外观、原表地址与市井生活线索。</p></div></div><a class="outline" href="/api/culture-story/huaian/sample">下载样本 JSON ↓</a></div>
+        <div class="sample-tools"><div id="sample-types" class="sample-types" aria-label="按原表建筑类型筛选"></div><div class="sample-search-box"><label class="sample-search-label" for="sample-search">名称、街巷或建筑年代</label><input id="sample-search" class="sample-search" placeholder="估衣街、茶馆、民国…" type="search"></div></div>
+        <p id="sample-count" class="inventory-count" role="status"></p>
+        <div id="sample-list" class="sample-list" aria-label="河下建筑图文卡片"></div>
+        <div id="sample-detail" class="sample-selection" hidden><p id="sample-selection-text"></p><button id="sample-open" class="outline">打开选中建筑 ↗</button><button id="sample-region" class="outline">查看河下区域 ↑</button><a id="sample-source">核对名录原文 S041 →</a></div>
+        <p class="sample-position-note">2018 年首批历史建筑名录的河下部分，按原表阅读建筑年代、类型与街巷地址。</p>
+      </section>
+      <footer class="story-footnote"><p>由水道读到商贸，再循街巷寻找文化生活的痕迹。</p><a href="./">回到清口遗产地图 →</a></footer>
+    </div>
+  </main>
+  <dialog id="atlas-dialog" aria-labelledby="atlas-dialog-title"><div class="dialog-head"><div><h2 id="atlas-dialog-title"></h2></div><button id="atlas-dialog-close" aria-label="关闭图文档案">×</button></div><figure id="atlas-dialog-figure"><span id="atlas-dialog-photo-kind" class="photo-kind"></span><img id="atlas-dialog-photo" alt="" decoding="async"><figcaption id="atlas-dialog-caption"></figcaption><div id="atlas-photo-pager" class="atlas-photo-pager" hidden><button id="atlas-photo-prev" class="outline" aria-label="上一幅资料图片">← 上一幅</button><span id="atlas-photo-count" role="status"></span><button id="atlas-photo-next" class="outline" aria-label="下一幅资料图片">下一幅 →</button></div><a id="atlas-dialog-original" target="_blank" rel="noopener">单独查看图片 ↗</a></figure><p id="atlas-dialog-description"></p><p id="atlas-dialog-coordinates" class="coordinate-note"></p><dl id="atlas-dialog-fields"></dl><div id="atlas-dialog-sources"></div><a id="atlas-dialog-panorama" class="outline" hidden>进入官方全景，查看周围街巷 ↗</a></dialog>
+  <script src="./vendor/ol.js"></script><script src="./atlas-map.js?v=3"></script><script src="./story.js?v=3"></script>
+<script src="./reading-ui.js?v=3"></script>
+</body>
+</html>

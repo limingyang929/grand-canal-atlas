@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="循着运河诗文，从开河、候闸到商贸、园林和今日街巷，读淮安河岸的时空变化。">
+  <title>循诗入城 · 一河千年</title>
+  <link rel="stylesheet" href="./design-tokens.css?v=3"><link rel="stylesheet" href="./components.css?v=4"><link rel="stylesheet" href="./vendor/ol.css"><link rel="stylesheet" href="./narrative.css?v=2">
+</head>
+<body class="narrative-page">
+  <a class="skip" href="#narrative-title">跳到河岸故事</a>
+  <header class="site-header"><a class="brand" href="./home.html"><span class="brand-title">一河千年</span><small>大运河 · 时空文化图志</small></a><nav class="site-nav" aria-label="主导航"><a href="./home.html">首页</a><a href="./narrative.html" aria-current="page">循诗入城</a><a href="./corridor.html">沿河寻城</a><a href="./evolution.html">时空演进</a><a href="./story.html">运河图志</a><a href="./">清口地图</a><a href="./evidence.html">资料依据</a></nav></header>
+  <main>
+    <section class="poem-opening" aria-labelledby="narrative-title"><div><p class="opening-question">水通了，岸上发生了什么？</p><h1 id="narrative-title">至今千里<br><span>赖通波。</span></h1></div><div class="opening-reading"><p class="poem-attribution">唐 · 皮日休《汴河怀古》</p><p>把时间交给一条河。船在闸前停下，客栈和茶社在岸边开门；人们运货、谋生、相聚，也把自己的故事留在这里。</p><p>从清江浦到河下，循着八幕地方记述，看水路怎样进入一座城的生活。</p><details class="poem-source"><summary>读原诗与出处</summary><blockquote>“尽道隋亡为此河，至今千里赖通波。<br>若无水殿龙舟事，共禹论功不较多。”</blockquote><p>这首诗咏汴河，在这里引出运河长久影响的提问。下文的淮安故事分别依据当地文史。</p><a href="https://zh.wikisource.org/zh-hans/汴河懷古" target="_blank" rel="noopener">维基文库 · 原诗录文</a></details></div></section>
+    <p id="narrative-status" class="narrative-status" role="status">正在展开河岸故事……</p>
+    <div id="narrative-experience" hidden>
+      <div class="narrative-controls"><span id="chapter-position"></span><div><button id="chapter-prev" aria-label="上一幕">←</button><button id="chapter-play" aria-pressed="false">播放河岸故事</button><button id="chapter-next" aria-label="下一幕">→</button><button id="chapter-share">复制本幕链接</button></div><span id="narrative-play-status" role="status">每幕停留10秒，可随时暂停阅读</span><div class="chapter-progress" role="progressbar" aria-label="本幕播放进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="chapter-progress-fill"></span></div></div>
+      <div class="narrative-layout">
+        <nav id="river-chapters" class="river-chapters" aria-label="河岸故事八幕"></nav>
+        <article class="chapter-reading" aria-labelledby="chapter-title">
+          <p id="chapter-time" class="chapter-time"></p><h2 id="chapter-title" tabindex="-1"></h2><p id="chapter-lead" class="chapter-lead"></p>
+          <div id="chapter-quote" class="chapter-quote"></div>
+          <figure class="chapter-figure"><button id="chapter-photo-open" aria-label="放大本幕地点资料图"><img id="chapter-photo" alt="" decoding="async"></button><figcaption><span id="chapter-photo-caption"></span><a id="chapter-photo-source" target="_blank" rel="noopener">图片来源</a></figcaption><p id="chapter-photo-fallback" hidden>图片暂未载入，可通过图片来源查看。</p></figure>
+          <div id="chapter-prose" class="chapter-prose"></div>
+          <section class="development-thread" aria-labelledby="thread-title"><h3 id="thread-title">从水路，到岸上</h3><ol id="chapter-thread"></ol><p id="chapter-change"></p></section>
+          <div class="chapter-outlets"><a id="chapter-explore">在时空地图继续探索</a><a id="chapter-dossier">翻开地点图志</a></div>
+        </article>
+        <aside class="narrative-geography" aria-labelledby="geography-title"><div class="geography-title"><h2 id="geography-title">故事发生的地方</h2><span id="chapter-area"></span></div><div id="evolution-map" tabindex="0" role="region" aria-label="本幕地点联动地图"></div><div class="geography-tools"><span id="chapter-map-count"></span><a class="map-corridor-link" href="./corridor.html">沿线184处 ↗</a><button id="chapter-fit">回到本幕范围</button></div><p class="narrative-map-note">底图为当代地理背景。彩色地点关联本幕史事；虚线仅示意地点联系，不是历史航路。</p><p id="narrative-feature" class="narrative-feature" role="status">点击地点看资料，也可点击河道与街区读名称。</p><section id="corridor-related" class="corridor-related" hidden aria-label="本幕主题的沿线城市对读"></section><h3 class="records-title">把故事落到具体地方</h3><div id="chapter-records" class="chapter-records"></div><p class="record-note">年代与文字据所列资料；地点用于阅读定位。</p></aside>
+      </div>
+      <section class="narrative-closing"><h2>河流没有停在过去。</h2><p>闸口、码头、园林、街巷，留下了不同年代的人怎样生活的线索。下一步，你可以自己选择时代与片区，重走这些地方。</p><a href="./evolution.html">自由探索六个时代的地图</a></section>
+    </div>
+  </main>
+  <dialog id="narrative-photo-dialog" aria-labelledby="narrative-photo-title"><div><h2 id="narrative-photo-title">地点资料图</h2><button id="narrative-photo-close" aria-label="关闭大图">×</button></div><img id="narrative-large-photo" alt=""><p id="narrative-large-caption"></p></dialog>
+  <script src="./vendor/ol.js"></script><script src="./evolution-core.js?v=2"></script><script src="./evolution-map.js?v=3"></script><script src="./narrative.js?v=2"></script><script src="./corridor-reading.js?v=1"></script>
+</body>
+</html>
